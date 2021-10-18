@@ -13,12 +13,16 @@ public class Army {
     }
 
     public void damageAll(int damage) {
-        militaryUnitList.stream().forEach(e -> e.sufferDamage(damage));
-        militaryUnitList = militaryUnitList.stream().filter(e -> e.getHitPoints() >= 25).collect( Collectors.toList());
+        militaryUnitList.forEach(e -> e.sufferDamage(damage));
+        militaryUnitList = militaryUnitList.stream()
+                .filter(e -> e.getHitPoints() >= 25)
+                .collect( Collectors.toList());
     }
 
     public int getArmyDamage() {
-        return militaryUnitList.stream().mapToInt(MilitaryUnit::doDamage).sum();
+        return militaryUnitList.stream()
+                .mapToInt(MilitaryUnit::doDamage)
+                .sum();
     }
 
     public int getArmySize() {

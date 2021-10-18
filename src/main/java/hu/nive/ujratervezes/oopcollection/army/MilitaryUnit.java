@@ -2,9 +2,12 @@ package hu.nive.ujratervezes.oopcollection.army;
 
 public abstract class MilitaryUnit {
 
-    protected int hitPoints;
-    protected int damage;
-    protected boolean armor;
+    private int hitPoints;
+    private int damage;
+    private boolean armor;
+
+    public MilitaryUnit() {
+    }
 
     public MilitaryUnit(int hitPoints, int damage, boolean armor) {
         this.hitPoints = hitPoints;

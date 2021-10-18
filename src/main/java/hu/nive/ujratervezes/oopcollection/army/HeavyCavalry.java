@@ -1,6 +1,7 @@
 package hu.nive.ujratervezes.oopcollection.army;
 
 public class HeavyCavalry extends MilitaryUnit{
+
     private boolean firstAttack = true;
 
     public HeavyCavalry() {
@@ -11,8 +12,8 @@ public class HeavyCavalry extends MilitaryUnit{
     public int doDamage() {
         if (firstAttack) {
             firstAttack = false;
-            return damage * 3;
+            return super.doDamage() * 3;
         }
-        return damage;
+        return super.doDamage();
     }
 }
